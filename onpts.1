@@ -1,0 +1,74 @@
+.TH ONPTS 1
+.SH NAME
+onpts \- write into the input buffer of a pseudo terminal slave
+
+.SH SYNOPSIS
+.B onpts
+[\fB\-h\fR | \fB\-\-help\fR]
+.br
+.B onpts
+[\fB\-n\fR]
+.IR ptsnumber 
+.IR "strings..."
+
+.SH DESCRIPTION
+This tool writes into the input buffer of a specific pseudo terminal slave (PTS).
+.br
+It first writes the \fIstrings\fR given as command line arguments into the input buffero of a PTS specified by \fIptsnumber\fR.
+After the last \fIstring\fR a line beak gets written if not permitted by the \fB\-n\fR option.
+Then it writes everything that gets piped to \fIstdin\fR into the PTSs input buffer.
+
+.SH OPTIONS
+.TP
+.BR \-h ", " \-\-help
+Display a help, version number and exit
+.TP
+.BR \-n
+Do not append a line break after the last \fIstring\fR that will be send to the PTS
+
+.SH EXIT STATUS
+.TP
+0
+Everything OK
+.TP
+1
+On error. Nothing got written to the PTS
+
+.SH EXAMPLES
+.nf
+.B onpts 2 whoami
+
+.fi
+Execute \fBwhoami\fR on PTS \fB2\fR
+
+.P
+.B pwd | onpts \-n 2 """cd """
+
+.fi
+Execute \fBcd\fR on PTS \fB2\fR to navigate to the same directory you are
+
+.P
+.B onpts 2 $\(aq\ee:wqa\(aq
+
+.fi
+Close vim that runs on PTS \fB2\fR
+
+.SH AUTHOR
+Written by Ralf Stemmer <ralf.stemmer@gmx.net>
+
+.SH REPORTING BUGS
+GitHub: <https://github.com/rstemmer/onpts/issues>
+
+.SH COPYRIGHT
+onpts  Copyright (C) 2017  Ralf Stemmer <ralf.stemmer@gmx.net>
+.br
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+.br
+This program comes with ABSOLUTELY NO WARRANTY
+.br
+This is free software, and you are welcome to redistribute it
+under certain conditions.
+
+.SH SEE ALSO
+Full documentation at: <https://github.com/rstemmer/onpts>
+
