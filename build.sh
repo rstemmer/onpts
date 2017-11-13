@@ -2,7 +2,7 @@
 
 SOURCE=$(find . -type f -name "*.c")
 HEADER="-I."
-LIBS="-L. -lfein"
+LIBS="-L."
 
 for c in $SOURCE ;
 do    

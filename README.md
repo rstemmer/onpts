@@ -134,40 +134,13 @@ Thats why the `$''` construct is used to make the shell do replace the "\n" by a
 
 ## Installation
 
-You need to install my [libfein](https://github.com/rstemmer/libfein) library.
-If you don't want to install it global, just copy the built _libfein.a_ and _fein.h_
- into the onpts source directory before executing the _build.sh_ script.
-
-### Download onpts and libfein source code
-
-```bash
-git clone https://github.com/rstemmer/libfein.git
-git clone https://github.com/rstemmer/onpts.git
-```
-
-### Build libfein
-
-```bash
-cd libfein
-
-# build
-./build.sh
-
-# copy lib to onpts source directory
-cp libfein.a ../onpts/.
-cp fein.h    ../onpts/.
-
-# or execute install.sh to install it into /usr/local
-# sudo ./install.sh
-```
-
-### Build and install onpts
-
 You should check the `install.sh` script before executing.
 The default installation path is _/usr/local/bin_
 
 ```bash
-cd ../onpts
+# download
+git clone https://github.com/rstemmer/onpts.git
+cd onpts
 
 # build
 ./build.sh

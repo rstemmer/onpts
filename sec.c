@@ -28,7 +28,7 @@
 #include <ctype.h>
 #include <unistd.h>
 #include <stdbool.h>
-#include <fein.h>
+#include <fein/fein.h>
 #include "sec.h"
 
 static uid_t global_uid;
