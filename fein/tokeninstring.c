@@ -28,7 +28,7 @@ int ForEachTokenInString(const char *str, const char *delimiters, TokenInStringC
     tokens = (char*)malloc(strlen(str) + 1);
     if(tokens == NULL)
     {
-        fprintf(stderr, "\e[1;31mmalloc(%d); failed with error: ", strlen(str)+1);
+        fprintf(stderr, "\e[1;31mmalloc(%lu); failed with error: ", strlen(str)+1);
         fprintf(stderr, "\e[1;31m%s\e[0m\n", strerror(errno));
         return -1;
     }
