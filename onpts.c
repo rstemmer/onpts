@@ -31,7 +31,13 @@
 #include <stdbool.h>
 #include "sec.h"
 
-#define VERSION "1.0.0"
+#define VERSION "1.0.1"
+/*
+ * CHANGELOG
+ *
+ * 1.0.1
+ *  - Stops appeding an unwanted trailing space to the string that gets send to the remote PTS
+ */
 
 int GetPTSPath(char *ptsnum, const char **ptspath);
 int CheckPTS(const char *ptspath);
@@ -130,6 +136,8 @@ int main(int argc, char *argv[])
 
     if(!opt_nolinebreak)
         arg_command[strlen(arg_command) - 1] = '\n';    // relace last " " with a "\n"
+    else
+        arg_command[strlen(arg_command) - 1] = '\0';    // remove last " "
 
 #ifdef DEBUG
     printf("\e[1;34mpname:     \e[0;36m%s\n", pname);
