@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo -e "onpts  Copyright (C) 2017  Ralf Stemmer <ralf.stemmer@gmx.net>"
 echo -e "This program comes with \e[1;33mABSOLUTELY NO WARRANTY\e[0m."

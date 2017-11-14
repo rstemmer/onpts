@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 SOURCE=$(find . -type f -name "*.c")
 HEADER="-I."
