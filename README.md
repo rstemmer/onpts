@@ -4,6 +4,8 @@ This tool writes into the input buffer of another pseudo terminal slave (PTS).
 
 [Idea by Pratik Sinha (2010)](http://www.humbug.in/2010/utility-to-send-commands-or-data-to-other-terminals-ttypts/)
 
+**Project State:** Alive and maintained
+
 ## Example
 
 This section shows the state of two terminals __after__ `onpts` was executed.
