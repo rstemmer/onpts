@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SOURCE=$(find . -type f -name "*.c")
-HEADER="-I."
+HEADER="-I. -I./fein"
 LIBS="-L."
 
 for c in $SOURCE ;
